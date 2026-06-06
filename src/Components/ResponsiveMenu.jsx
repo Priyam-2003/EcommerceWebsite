@@ -1,4 +1,4 @@
-import { UserButton, useUser } from "@clerk/react";
+import { Show, SignInButton, UserButton, useUser } from "@clerk/react";
 import React from "react";
 import { FaUserCircle } from "react-icons/fa";
 import { Link } from "react-router-dom";
@@ -17,6 +17,14 @@ const ResponsiveMenu = ({ openNav, setOpenNav }) => {
             <h1 className="text-sm text-slate-500">Premium User</h1>
           </div>
         </div>
+        <div className="mt-5 flex items-center">
+            <Show when="signed-out">
+              <SignInButton
+                className="bg-red-500 text-white px-3 py-1 rounded-md
+            cursor-pointer mx-auto"
+              />
+            </Show>
+          </div>
         <nav className="mt-12">
           <ul className="flex flex-col gap-7 text-2xl font-semibold">
             <Link
