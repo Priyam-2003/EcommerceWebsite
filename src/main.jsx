@@ -14,7 +14,16 @@ createRoot(document.getElementById("root")).render(
       <CartProvider>
         <ClerkProvider>
           <App />
-          <ScrollToTop smooth color="white" style={{backgroundColor:'#fa2d37',display:'flex', alignItems:'center',justifyContent:"center"}}/>
+          <ScrollToTop
+            smooth
+            color="white"
+            style={{
+              backgroundColor: "#fa2d37",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          />
           <ToastContainer
             position="bottom-right"
             autoClose={5000}

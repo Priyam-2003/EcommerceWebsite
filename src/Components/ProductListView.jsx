@@ -4,10 +4,9 @@ import { useCart } from "../context/CartContext";
 
 const ProductListView = ({ item }) => {
   const navigate = useNavigate();
-  const {addToCart} = useCart();
-   const originalPrice = Math.round(
-    item.price +
-      (item.price * item.discountPercentage) / 100,
+  const { addToCart } = useCart();
+  const originalPrice = Math.round(
+    item.price + (item.price * item.discountPercentage) / 100,
   );
   console.log(item);
   return (
@@ -19,14 +18,15 @@ const ProductListView = ({ item }) => {
           onClick={() => navigate(`/products/${item.id}`)}
           className="md:h-60 md:w-60 h-25 w-25 rounded-md cursor-pointer"
         />
-       <div className="space-y-4">
-        <h1 
-        onClick={() => navigate(`/products/${item.id}`)}
-        className="font-bold md:text-xl text-lg line-clamp-3 hover:text-red-400 md:w-full cursor-default w-55">{item.title}</h1>
-         <p className="flex flex-wrap items-center gap-3">
-            <span className="md:text-3xl text-xl">
-              ${item.price}
-            </span>
+        <div className="space-y-4">
+          <h1
+            onClick={() => navigate(`/products/${item.id}`)}
+            className="font-bold md:text-xl text-lg line-clamp-3 hover:text-red-400 md:w-full cursor-default w-55"
+          >
+            {item.title}
+          </h1>
+          <p className="flex flex-wrap items-center gap-3">
+            <span className="md:text-3xl text-xl">${item.price}</span>
 
             <span className="text-sm text-gray-400 line-through md:text-xl">
               ${originalPrice}
@@ -36,13 +36,19 @@ const ProductListView = ({ item }) => {
               {item.discountPercentage}% OFF
             </span>
           </p>
-          <p className="text-sm">FREE delivery <span className="font-semibold">Fri, 18 Apr</span> <br />
-          Or fastest delivery <span className="font-semibold">Tomorrow, 17 Apr</span>
+          <p className="text-sm">
+            FREE delivery <span className="font-semibold">Fri, 18 Apr</span>{" "}
+            <br />
+            Or fastest delivery{" "}
+            <span className="font-semibold">Tomorrow, 17 Apr</span>
           </p>
-          <button 
-          onClick={()=>addToCart(item,1)}
-          className="bg-red-500 text-white px-3 py-1 rounded-md hover:bg-red-600 transition">Add to Cart</button>
-       </div>
+          <button
+            onClick={() => addToCart(item, 1)}
+            className="bg-red-500 text-white px-3 py-1 rounded-md hover:bg-red-600 transition"
+          >
+            Add to Cart
+          </button>
+        </div>
       </div>
     </div>
   );

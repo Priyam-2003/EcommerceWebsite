@@ -4,7 +4,8 @@ import banner from "../assets/banner1.jpg";
 const MidBanner = () => {
   return (
     <div className="bg-gray-100 md:py-24">
-      <div className="relative max-w-7xl mx-auto md:rounded-2xl pt-28 bg-cover bg-center h-125 md:h-150"
+      <div
+        className="relative max-w-7xl mx-auto md:rounded-2xl pt-28 bg-cover bg-center h-125 md:h-150"
         style={{
           backgroundImage: `url(${banner})`,
           backgroundPosition: "center",
@@ -17,9 +18,12 @@ const MidBanner = () => {
               Next-Gen Electronics at Your Fingertips
             </h1>
             <p className="text-lg md:text-xl mb-6">
-                Discover the latest tech innovations with unbeatable prices and free shipping on all orders.
+              Discover the latest tech innovations with unbeatable prices and
+              free shipping on all orders.
             </p>
-            <button className="bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 md:py-3 md:px-6 rounded-lg transition duration-300">Shop Now</button>
+            <button className="bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 md:py-3 md:px-6 rounded-lg transition duration-300">
+              Shop Now
+            </button>
           </div>
         </div>
       </div>

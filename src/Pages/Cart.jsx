@@ -6,7 +6,7 @@ import { MdDeliveryDining } from "react-icons/md";
 import { GiShoppingBag } from "react-icons/gi";
 import { useUser } from "@clerk/react";
 import { useNavigate } from "react-router-dom";
-import emptyCard from '../assets/empty-cart.png';
+import emptyCard from "../assets/empty-cart.png";
 
 const Cart = ({ location, getLocation }) => {
   const { cartItem, updateQuantity, deleteItem } = useCart();
@@ -44,9 +44,10 @@ const Cart = ({ location, getLocation }) => {
                     key={indx}
                     className="bg-gray-100 p-5 rounded-md flex items-center justify-between mt-3 w-full sm:gap-1"
                   >
-                    <div 
-                    onClick={()=>navigation(`/products/${item.id}`)}
-                    className="flex items-center gap-4">
+                    <div
+                      onClick={() => navigation(`/products/${item.id}`)}
+                      className="flex items-center gap-4"
+                    >
                       <img
                         src={item.images[0]}
                         alt={item.title}
@@ -253,11 +254,16 @@ const Cart = ({ location, getLocation }) => {
         </div>
       ) : (
         <div className="flex flex-col gap-3 justify-center items-center h-125 ">
-          <h1 className="text-red-500/80 font-bold text-5xl">Oh no! Your cart is empty</h1>
-          <img src={emptyCard} alt="emptyCard" className="w-100"/>
-          <button 
-          onClick={()=>navigation('/products')}
-          className="bg-red-500 text-white px-3 py-2 rounded-md cursor-pointer  hover:bg-red-700 hover:shadow-2xl transition-colors duration-300">Continue Shopping</button>
+          <h1 className="text-red-500/80 font-bold text-5xl">
+            Oh no! Your cart is empty
+          </h1>
+          <img src={emptyCard} alt="emptyCard" className="w-100" />
+          <button
+            onClick={() => navigation("/products")}
+            className="bg-red-500 text-white px-3 py-2 rounded-md cursor-pointer  hover:bg-red-700 hover:shadow-2xl transition-colors duration-300"
+          >
+            Continue Shopping
+          </button>
         </div>
       )}
     </div>

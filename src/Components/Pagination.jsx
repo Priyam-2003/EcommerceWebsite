@@ -25,7 +25,7 @@ const Pagination = ({ pageHandler, page, setPage, dynamicPage }) => {
         className={`${page === 1 ? "bg-red-400" : "bg-red-500"} text-white px-3 py-1 rounded-md cursor-pointer flex justify-center items-center gap-2`}
         onClick={() => pageHandler(page - 1)}
       >
-        <FaArrowLeft/>
+        <FaArrowLeft />
         Prev
       </button>
       {getPages(page, dynamicPage)?.map((item, indx) => {

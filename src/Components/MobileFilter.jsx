@@ -14,9 +14,9 @@ const MobileFilter = ({
   handleCategoryChange,
   handleBrandChange,
   openFilter,
-  setOpenFilter
+  setOpenFilter,
 }) => {
-    const { categoryData, brandData } = getData();
+  const { categoryData, brandData } = getData();
   return (
     <>
       <div className="bg-gray-100 flex justify-between items-center lg:hidden px-4 py-2 mt-5">

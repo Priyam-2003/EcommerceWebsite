@@ -11,8 +11,8 @@ import { HiMenuAlt1, HiMenuAlt3 } from "react-icons/hi";
 import ResponsiveMenu from "./ResponsiveMenu";
 
 const Navbar = ({ location, getLocation, dropDown, setDropDown }) => {
-  const {cartItem} = useCart();
-  const [openNav,setOpenNav] = useState(false);
+  const { cartItem } = useCart();
+  const [openNav, setOpenNav] = useState(false);
   const toggleDropdown = () => {
     setDropDown(!dropDown);
   };
@@ -114,12 +114,20 @@ const Navbar = ({ location, getLocation, dropDown, setDropDown }) => {
               <UserButton />
             </Show>
           </div>
-          {
-            openNav ? <HiMenuAlt3 onClick={()=>setOpenNav(false)} className="h-7 w-7 md:hidden"/> : <HiMenuAlt1 onClick={()=>setOpenNav(true)} className="h-7 w-7 md:hidden"/>
-          }
+          {openNav ? (
+            <HiMenuAlt3
+              onClick={() => setOpenNav(false)}
+              className="h-7 w-7 md:hidden"
+            />
+          ) : (
+            <HiMenuAlt1
+              onClick={() => setOpenNav(true)}
+              className="h-7 w-7 md:hidden"
+            />
+          )}
         </nav>
       </div>
-      <ResponsiveMenu openNav={openNav} setOpenNav={setOpenNav}/>
+      <ResponsiveMenu openNav={openNav} setOpenNav={setOpenNav} />
     </div>
   );
 };

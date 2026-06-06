@@ -11,7 +11,7 @@ const FilterSection = ({
   category,
   setCategory,
   handleCategoryChange,
-  handleBrandChange
+  handleBrandChange,
 }) => {
   const { categoryData, brandData } = getData();
 
@@ -78,8 +78,15 @@ const FilterSection = ({
           }
         />
       </div>
-      <button className="bg-red-500 text-white rounded-md px-3 py-1 mt-5 cursor-pointer hover:shadow-2xl hover:bg-red-700 transition-all duration-300 ml-10" 
-      onClick={()=>{setSearch('');setCategory("All");setBrand("All");setPriceRange([0,5000])}}>
+      <button
+        className="bg-red-500 text-white rounded-md px-3 py-1 mt-5 cursor-pointer hover:shadow-2xl hover:bg-red-700 transition-all duration-300 ml-10"
+        onClick={() => {
+          setSearch("");
+          setCategory("All");
+          setBrand("All");
+          setPriceRange([0, 5000]);
+        }}
+      >
         Reset Filters
       </button>
     </div>
